@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AIVORA – Think. Create. Discover.</title>
+<link rel="icon" href="assets/logo.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="splash" aria-hidden="true">
+  <img src="assets/logo.svg" alt="" class="s-logo">
+  <h1 class="s-name">AIVORA</h1>
+  <p class="s-by">Created By Shiv Yogi</p>
+</div>
+<div id="app">
+  <aside id="side" aria-label="Chats">
+    <div class="row"><img src="assets/logo.svg" alt="" width="28"><b>AIVORA</b></div>
+    <button id="newChat" class="btn primary">+ New chat</button>
+    <input id="chatSearch" type="search" placeholder="Search chats" aria-label="Search chats">
+    <nav id="chatList"></nav>
+    <button id="openSettings" class="btn">Settings &amp; About</button>
+  </aside>
+  <main>
+    <header class="row">
+      <button id="menu" class="btn icon" aria-label="Toggle sidebar">☰</button>
+      <span id="title">New chat</span>
+      <span id="net" class="pill">online</span>
+      <button id="exportChat" class="btn icon" aria-label="Export chat" title="Export chat">⤓</button>
+      <button id="clearChat" class="btn icon" aria-label="Clear chat" title="Clear chat">🗑</button>
+    </header>
+    <section id="msgs" aria-live="polite"></section>
+    <footer>
+      <div id="chips"></div>
+      <div class="row inbar">
+        <textarea id="input" rows="1" placeholder="Ask anything…" aria-label="Message"></textarea>
+        <button id="mic" class="btn icon" aria-label="Voice input">🎤</button>
+        <button id="send" class="btn primary" aria-label="Send">Send</button>
+      </div>
+      <small id="count"></small>
+    </footer>
+  </main>
+</div>
+<dialog id="dlg">
+  <h2>Settings</h2>
+  <label>Theme <select id="s-theme"><option>system</option><option>light</option><option>dark</option></select></label>
+  <label>Accent <input id="s-accent" type="color"></label>
+  <label>Font size <input id="s-font" type="range" min="13" max="20"></label>
+  <label>Glass blur <input id="s-blur" type="range" min="0" max="40"></label>
+  <label>Splash <select id="s-splash"><option value="full">Full</option><option value="short">Short</option><option value="off">Disabled</option></select></label>
+  <label><input id="s-anim" type="checkbox"> Animations</label>
+  <label><input id="s-enter" type="checkbox"> Enter to send</label>
+  <label><input id="s-web" type="checkbox"> Web search</label>
+  <label><input id="s-wiki" type="checkbox"> Wikipedia</label>
+  <label>Wikipedia language <input id="s-lang" maxlength="5" size="4"></label>
+  <label>Result count <input id="s-count" type="number" min="1" max="8"></label>
+  <div class="row"><button id="exportAll" class="btn">Export data</button>
+  <label class="btn">Import<input id="importAll" type="file" accept=".json" hidden></label>
+  <button id="wipe" class="btn danger">Reset all data</button></div>
+  <h3>About AIVORA</h3>
+  <p><b>AIVORA</b> — Think. Create. Discover.<br>Created By Shiv Yogi.<br>A web-based AI assistant that uses web information and Wikipedia, with no Gemini API key and no account.</p>
+  <button id="closeSettings" class="btn primary">Done</button>
+</dialog>
+<div id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
